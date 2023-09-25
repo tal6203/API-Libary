@@ -55,13 +55,17 @@
 
       function deleteBook(button) {
         const row = button.closest("tr");
-        const title = row.querySelector("td:first-child").textContent;
-        
-        const updatedFavorites = favorites.filter((book) => book.title !== title);
-        localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-        
+        const titleCell = row.querySelector("td:first-child");
+        const title = titleCell.textContent;
+
+        const index = favorites.findIndex((book) => book.title === title);
+
+        if (index !== -1) {
+        favorites.splice(index, 1);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
         row.remove();
-      }
+        }
+    }
     </script>
   </body>
 </html>
