@@ -7,7 +7,6 @@
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
     { "src": "/favorites_books", "dest": "/static/favorites_books.html" },
     { "src": "/(.*)", "dest": "/static/search_book.html" }
   ]
