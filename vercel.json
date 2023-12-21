@@ -10,12 +10,14 @@
     { "src": "/(.*)", "dest": "/app.js" }
   ],
   "cleanUrls": true,
-  "headers": {
-    "/static/**/*.css": {
-      "Content-Type": "text/css"
+  "headers": [
+    {
+      "source": "/static/**/*.css",
+      "headers": [{ "key": "Content-Type", "value": "text/css" }]
     },
-    "/script/**/*.js": {
-      "Content-Type": "text/javascript"
+    {
+      "source": "/script/**/*.js",
+      "headers": [{ "key": "Content-Type", "value": "text/javascript" }]
     }
-  }
+  ]
 }
