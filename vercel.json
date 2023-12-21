@@ -2,7 +2,7 @@
   "version": 2,
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/script/script.js" },
+    { "src": "/script/(.*)", "dest": "/script/$1" },
     { "src": "/(.*)", "dest": "/static/search_book.html" },
     { "src": "/(.*)", "dest": "/static/favorites_books.html" }
   ]
