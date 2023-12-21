@@ -3,7 +3,8 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/script/(.*)", "dest": "/script/$1" },
-    { "src": "/(.*)", "dest": "/static/search_book.html" },
-    { "src": "/(.*)", "dest": "/static/favorites_books.html" }
+    { "src": "/search_book/(.*)", "dest": "/static/search_book/$1" },
+    { "src": "/favorites_books/(.*)", "dest": "/static/favorites_books/$1" },
+    { "src": "/(.*)", "dest": "/static/search_book.html" }
   ]
 }
