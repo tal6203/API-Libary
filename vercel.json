@@ -3,11 +3,11 @@
   "builds": [
     { "src": "app.js", "use": "@vercel/node" }
   ],
-  "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/script/(.*)", "dest": "/script/$1" },
-    { "src": "/routes/(.*)", "dest": "/routes/routes.js" },
-    { "src": "/(.*)", "dest": "/app.js" }
+  "rewrites": [
+    { "source": "/static/(.*)", "destination": "/static/$1" },
+    { "source": "/script/(.*)", "destination": "/script/$1" },
+    { "source": "/routes/(.*)", "destination": "/routes/routes.js" },
+    { "source": "/(.*)", "destination": "/app.js" }
   ],
   "cleanUrls": true,
   "headers": [
