@@ -1,14 +1,16 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes/routes');
 const path = require('path');
-const port = 8080;
+const port = process.env.PORT || 8080;
 
-app.use(express.static(path.join('.', '/static/')));
+// Serve static files from the 'static' and 'script' directories
+app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(path.join(__dirname, 'script')));
 
-app.use(express.static(path.join('.', '/script/')));
-
-app.use(routes);
+// Fallback route to serve 'search_book.html' for any other route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'static', 'search_book.html'));
+});
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
