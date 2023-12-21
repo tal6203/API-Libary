@@ -5,23 +5,5 @@
       "src": "app.js",
       "use": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/script/(.*)",
-      "dest": "/script/$1"
-    },
-    {
-      "src": "/favorites_books",
-      "dest": "/static/favorites_books.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/static/search_book.html"
-    }
   ]
 }
