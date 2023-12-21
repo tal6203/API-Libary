@@ -11,5 +11,11 @@
     { "src": "/script/(.*)", "dest": "/script/$1.js" },
     { "src": "/static/(.*)", "dest": "/static/$1" },
     { "src": "/(.*)", "dest": "/app.js" }
-  ]
+  ],
+  "static": {
+    "mimeTypes": {
+      "static/**/*.css": "text/css",
+      "static/**/*.js": "text/javascript"
+    }
+  }
 }
