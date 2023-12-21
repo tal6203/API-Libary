@@ -7,6 +7,8 @@ const port = 8080;
 // app.use(express.static(path.join('.', '/static/')));
 
 // app.use(express.static(path.join('.', '/script/')));
+app.use(express.static('static'));
+app.use(express.static('script'));
 
 app.use(routes);
 
