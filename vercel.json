@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
+    { "src": "/favorites_books", "dest": "/static/favorites_books.html" },
     { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/script/(.*)", "dest": "/script/$1" },
     { "src": "/(.*)", "dest": "/static/$1" }
   ]
 }
