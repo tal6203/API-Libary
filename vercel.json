@@ -1,15 +1,16 @@
 {
   "version": 2,
   "builds": [
-    { "src": "routes/*.js", "use": "@vercel/node" },
-    { "src": "script/*.js", "use": "@vercel/node" },
+    { "src": "routes/**/*.js", "use": "@vercel/node" },
     { "src": "static/**", "use": "@vercel/static" },
-    { "src": "app.js", "use": "@vercel/node" }
+    { "src": "script/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/routes/(.*)", "dest": "/routes/$1.js" },
-    { "src": "/script/(.*)", "dest": "/script/$1.js" },
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/(.*)", "dest": "/app.js" }
-  ]
+    { "handle": "filesystem" },
+    {
+      "src": "/.*",
+      "dest": "/app.js"
+    }
+  ],
+  "cleanUrls": true
 }
