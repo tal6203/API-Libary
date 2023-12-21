@@ -12,11 +12,11 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/static/**/*.css",
+      "source": "/static/**",
       "headers": [{ "key": "Content-Type", "value": "text/css" }]
     },
     {
-      "source": "/script/**/*.js",
+      "source": "/script/**",
       "headers": [{ "key": "Content-Type", "value": "text/javascript" }]
     }
   ]
