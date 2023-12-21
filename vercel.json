@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/favorites_books", "dest": "/static/favorites_books.html" },
+    { "src": "/(.*)", "dest": "/static/search_book.html" }
   ]
 }
