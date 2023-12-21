@@ -1,9 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "routes/**/*.js", "use": "@vercel/node" },
-    { "src": "static/**", "use": "@vercel/static" },
-    { "src": "script/**", "use": "@vercel/static" }
+    { "src": "routes/**.js", "use": "@vercel/node" },
+    { "src": "/static/**", "use": "@vercel/static" },
+    { "src": "/script/**", "use": "@vercel/static" }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/app.js" }
