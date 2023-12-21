@@ -2,8 +2,8 @@
   "version": 2,
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/favorites_books", "dest": "/static/favorites_books.html" },
-    { "src": "/script/script.js", "dest": "/script/script.js" },
-    { "src": "/(.*)", "dest": "/static/search_book.html" }
+    { "src": "/(.*)", "dest": "/script/script.js" },
+    { "src": "/(.*)", "dest": "/static/search_book.html" },
+    { "src": "/(.*)", "dest": "/static/favorites_books.html" }
   ]
 }
