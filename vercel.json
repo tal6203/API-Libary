@@ -1,23 +1,27 @@
 {
   "version": 2,
   "builds": [
-    { "src": "app.js", "use": "@vercel/node" }
-  ],
-  "rewrites": [
-    { "source": "/static/(.*)", "destination": "/static/$1" },
-    { "source": "/script/(.*)", "destination": "/script/$1" },
-    { "source": "/routes/(.*)", "destination": "/routes/routes.js" },
-    { "source": "/(.*)", "destination": "/app.js" }
-  ],
-  "cleanUrls": true,
-  "headers": [
     {
-      "source": "/static/**",
-      "headers": [{ "key": "Content-Type", "value": "text/css" }]
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     },
     {
-      "source": "/script/**",
-      "headers": [{ "key": "Content-Type", "value": "text/javascript" }]
+      "src": "/script/(.*)",
+      "dest": "/script/$1"
+    },
+    {
+      "src": "/favorites_books",
+      "dest": "/static/favorites_books.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/static/search_book.html"
     }
   ]
 }
