@@ -2,8 +2,9 @@ let subject_book = document.getElementById("subject_book");
 document.getElementById("btn_search").addEventListener("click", async () => {
   let respons = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${subject_book.value}&maxResults=9&printType=books&orderBy=newest`);
   let data = await respons.json();
-  if (document.getElementById("result_search").children.length == 0)
+  if (document.getElementById("result_search").children.length == 0) {
     create_table(data.items);
+  }
   else {
     deleteRows();
     create_table(data.items);
@@ -18,12 +19,12 @@ function create_table(books) {
   div.innerHTML += ` <div id = "result_table" class="row">
     <div class="card">
       <div class="card-body">
-        <h1 class="card-title">Search Results</h1>
+        <h1 style="font-weight: bold;" class="card-title d-flex justify-content-center">Search Results</h1>
         <div class="table-responsive">
           <table id="list_of_book" class="table table-hover">
             <thead>
               <tr>
-                <th><button class="btn_th">-</button></th>
+                <th><i class="fa fa-minus" aria-hidden="true"></i></th>
                 <th>Added</th>
                 <th>Job Title</th>
                 <th>Name</th>
@@ -33,12 +34,16 @@ function create_table(books) {
             </thead>
           </table>
         </div>
+        <div class="d-flex justify-content-center">
         <button id="btn_add" type="button" class="btn">
           <i class="fa fa-plus-circle mr-2"></i> Add
         </button>
+        </div>
       </div>
     </div>
   </div>`
+
+
 
   for (let i = 0; i < books.length; i++) {
     document.getElementById("list_of_book").innerHTML += `<tr class="tr-update">
@@ -70,7 +75,7 @@ function addBooks() {
 
       }
       else {
-        e.parentNode.parentNode.style.backgroundColor = "#333";
+        e.parentNode.parentNode.style.backgroundColor = "white";
         arr = arr.filter(item => item !== e.parentNode.parentNode);
       }
     });
