@@ -25,11 +25,11 @@ function create_table(books) {
             <thead>
               <tr>
                 <th><i class="fa fa-minus" aria-hidden="true"></i></th>
-                <th>Added</th>
-                <th>Job Title</th>
-                <th>Name</th>
-                <th>Business</th>
-                <th>Industry</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Binding</th>
+                <th>Published Date</th>
               </tr>
             </thead>
           </table>
@@ -49,8 +49,8 @@ function create_table(books) {
     document.getElementById("list_of_book").innerHTML += `<tr class="tr-update">
     <td><input type="checkbox" class="form-check-input"></td>
     <td>${books[i].volumeInfo.title}</td>
-    <td>${books[i].volumeInfo.title}</td>
-    <td>${books[i].volumeInfo.publisher}</td>
+    <td>${books[i].volumeInfo.authors[0]}</td>
+    <td>${books[i].volumeInfo.description.split('. ').slice(0, 2).join('. ') + '.'}</td>
     <td><img src="${books[i].volumeInfo.imageLinks.thumbnail}" /></td>
     <td>${books[i].volumeInfo.publishedDate}</td>
     </tr>`
