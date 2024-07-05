@@ -13,7 +13,7 @@ Welcome to the API-Library repository! This project is a simple API library buil
 
 ## 📖 Overview
 
-The API-Library application provides a call to an external API to obtain a list of books suitable for the search that the user registered and then the user can choose his favorite books and add them to him using the Local Storge.
+The API-Library application provides a call to an external API to receive a list of books that match the search that the user wrote, and then the user can select his favorite books and add them to him using the Local Storge.
 
 
 ## 🔧 Setup
